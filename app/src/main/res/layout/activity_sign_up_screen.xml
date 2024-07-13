@@ -11,7 +11,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-
         android:layout_marginStart="20dp"
         android:layout_marginTop="25dp"
         android:src="@drawable/ic_back_arrow"
@@ -41,7 +40,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="109dp"
         android:textColor="#FF2E3E5C"
-        android:text="Please enter your account here"
+        android:text="@string/please_enter_your_account_here"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvWelcomeSignUp" />
@@ -148,23 +147,20 @@
         app:layout_constraintTop_toBottomOf="@+id/cardView"
 
         />
-
-
-
     <Button
         android:id="@+id/btnLoginInSingupScreen"
         android:layout_width="250dp"
         android:layout_height="60dp"
         android:layout_marginTop="160dp"
         android:backgroundTint="#1FCC79"
-        android:text="Login"
+        android:text="Sign Up"
         android:textColor="#FFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvForgotPass" />
 
-    <CheckBox
+    <RadioButton
         android:id="@+id/checkBox"
         android:layout_width="200dp"
         android:layout_height="48dp"
@@ -178,7 +174,7 @@
 
         />
 
-    <CheckBox
+    <RadioButton
         android:id="@+id/checkBox2"
         android:layout_width="200dp"
         android:layout_height="48dp"
@@ -189,6 +185,4 @@
         app:layout_constraintTop_toBottomOf="@+id/checkBox"
         android:clickable="false"
         />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

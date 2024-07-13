@@ -15,6 +15,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="25dp"
         android:layout_marginEnd="30dp"
+        android:contentDescription="@string/go_back_icon"
         android:src="@drawable/ic_back_arrow"
         app:layout_constraintBottom_toBottomOf="@+id/tvShoppingMethod"
         app:layout_constraintEnd_toStartOf="@+id/tvShoppingMethod"
@@ -29,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="25dp"
-            android:text="Shopping Method"
+            android:text="@string/shopping_method"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/ivBackIconPassRecovery"
@@ -68,7 +69,7 @@
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:gravity="center"
-                    android:text="1"
+                    android:text="@string/_1"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     android:textColor="#FFFF"
@@ -80,7 +81,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="DELIVERY" />
+                android:text="@string/delivery" />
         </LinearLayout>
 
         <View
@@ -109,7 +110,7 @@
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:gravity="center"
-                    android:text="2"
+                    android:text="@string/_2"
                     android:textSize="20sp"
                     android:textStyle="bold"
 
@@ -120,7 +121,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="ADDRESS" />
+                android:text="@string/address" />
         </LinearLayout>
 
         <View
@@ -149,7 +150,7 @@
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:gravity="center"
-                    android:text="3"
+                    android:text="@string/_3"
                     android:textSize="20sp"
                     android:textStyle="bold"
 
@@ -160,7 +161,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="PAYMENT" />
+                android:text="@string/payment" />
         </LinearLayout>
 
     </LinearLayout>
@@ -169,6 +170,7 @@
         android:id="@+id/cvStandardDelivery"
         android:layout_width="350dp"
         android:layout_height="108dp"
+        android:focusable="true"
         app:layout_constraintTop_toBottomOf="@id/LinearLayoutShoppingMethods"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -180,7 +182,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Standard Delivery"
+            android:text="@string/standard_delivery"
             android:textSize="15sp"
             android:textStyle="bold"
             android:layout_margin="10dp"
@@ -188,22 +190,22 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="RS 100"
+            android:text="@string/rs_100"
             android:layout_gravity="end"
             android:layout_margin="10dp"
             android:textStyle="bold"
-            android:textColor="#FF1FCC79"
+            android:textColor="#25A266"
 
             />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            android:layout_marginLeft="10dp"
-            android:text="Order will be delivered between 3-5 business days in your doorstep."
+            android:layout_marginStart="10dp"
+            android:text="@string/order_will_be_delivered_between_1_2_business_days_in_your_doorstep"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            android:textColor="#BFBEBE"
+            android:textColor="#252424"
 
             />
     </androidx.cardview.widget.CardView>
@@ -213,6 +215,7 @@
         android:id="@+id/cvStandardDelivery2"
         android:layout_width="350dp"
         android:layout_height="108dp"
+        android:focusable="true"
         app:layout_constraintTop_toBottomOf="@id/cvStandardDelivery"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -225,7 +228,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Standard Delivery"
+            android:text="@string/fast_delivery"
             android:textSize="15sp"
             android:textStyle="bold"
             android:layout_margin="10dp"
@@ -233,22 +236,22 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="RS 200"
+            android:text="@string/rs_200"
             android:layout_gravity="end"
             android:layout_margin="10dp"
             android:textStyle="bold"
-            android:textColor="#FF1FCC79"
+            android:textColor="#25A266"
 
             />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            android:layout_marginLeft="10dp"
-            android:text="Order will be delivered on the same days at your doorstep."
+            android:layout_marginStart="10dp"
+            android:text="@string/order_will_be_delivered_on_the_same_day_at_your_doorstep"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            android:textColor="#BFBEBE"
+            android:textColor="#252424"
 
             />
     </androidx.cardview.widget.CardView>
@@ -259,7 +262,7 @@
         android:layout_height="60dp"
         android:layout_marginTop="100dp"
         android:backgroundTint="#1FCC79"
-        android:text="Next"
+        android:text="@string/next"
         android:textColor="#FFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"

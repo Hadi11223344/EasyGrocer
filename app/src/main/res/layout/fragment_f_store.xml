@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".FStore"
+    android:padding="20dp"
+    >
+
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_shop"
+        android:id="@+id/ivShop"
+        android:layout_margin="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+    <TextView
+        android:id="@+id/tvWelcomeToAdmin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome to Grocer's Admin"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivShop"
+        android:textColor="@color/black"
+        />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvWelcomeToAdmin"
+
+            >
+            <TextView
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:text="Select Category and Sub-Category of Product: "
+                android:id="@+id/tvSelectCategory"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="5dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="0dp"
+                >
+                <Spinner
+                    android:id="@+id/productCatSpinner"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:textColor="@color/black"
+                    />
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="0dp"
+
+                >
+                <Spinner
+
+                    android:id="@+id/productSubCatSpinner"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:textColor="@color/black"
+                    />
+
+
+            </androidx.cardview.widget.CardView>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tietProductName"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:hint="Name of product"
+                    android:textColor="@color/black"
+
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:id="@+id/tilPrice"
+
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tietProductPrice"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:hint="Price of product"
+                    android:textColor="@color/black"
+                    android:inputType="number"
+
+
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tilPrice"
+                android:orientation="vertical"
+                android:layout_margin="5dp"
+
+                >
+                <TextView
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:text="Add Image of the product: "
+                    android:textColor="@color/black"
+
+                    />
+                <Button
+                    android:id="@+id/btnImageUpload"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:text="Upload"
+                    android:backgroundTint="@color/light_green"
+                    />
+                <ImageView
+                    android:id="@+id/ivImage"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/ic_image"
+                    />
+
+                <Button
+                    android:id="@+id/btnSubmit"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:text="Submit"
+                    android:backgroundTint="@color/light_green"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp"
+                    />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

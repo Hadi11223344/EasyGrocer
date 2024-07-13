@@ -1,3 +1,49 @@
 <resources>
     <string name="app_name">EasyGrocer</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="don_t_have_any_account">Don\'t have any account?</string>
+    <string name="google_logo">google logo</string>
+    <string name="google">Google</string>
+    <string name="or_continue_with">Or continue with</string>
+    <string name="login">Login</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="password_eye">password eye</string>
+    <string name="your_password">your password</string>
+    <string name="password_icon">password icon</string>
+    <string name="yourmail_mail_com">yourmail@mail.com</string>
+    <string name="email_icon">email_icon</string>
+    <string name="please_enter_your_account_here">Please enter your account here</string>
+    <string name="welcome">Welcome!</string>
+    <string name="code_expires_in">Code expires in:</string>
+    <string name="_01_30">01:30</string>
+    <string name="send_again">Send again</string>
+    <string name="verify">Verify</string>
+    <string name="back_icon">Back icon</string>
+    <string name="check_your_email">Check your email!</string>
+    <string name="we_ve_sent_the_code_to_your_email">We\'ve sent the code to your email</string>
+    <string name="order_will_be_delivered_on_the_same_day_at_your_doorstep">Order will be delivered on the same day at your doorstep.</string>
+    <string name="next">Next</string>
+    <string name="rs_200">RS 200</string>
+    <string name="fast_delivery">Fast Delivery</string>
+    <string name="order_will_be_delivered_between_1_2_business_days_in_your_doorstep">Order will be delivered between 1-2 business days in your doorstep.</string>
+    <string name="rs_100">RS 100</string>
+    <string name="standard_delivery">Standard Delivery</string>
+    <string name="payment">PAYMENT</string>
+    <string name="_3">3</string>
+    <string name="address">ADDRESS</string>
+    <string name="_2">2</string>
+    <string name="delivery">DELIVERY</string>
+    <string name="_1">1</string>
+    <string name="shopping_method">Shopping Method</string>
+    <string name="go_back_icon">go_back_icon</string>
+    <string name="your_name">your name</string>
+    <string name="your_mail">your mail</string>
+    <string name="your_phone">your phone</string>
+    <string name="your_address">your address</string>
+    <string name="save_details_for_future_use">Save details for future use</string>
+    <string name="pay_online">Pay Online</string>
+    <string name="cash_on_delivery">Cash On Delivery</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

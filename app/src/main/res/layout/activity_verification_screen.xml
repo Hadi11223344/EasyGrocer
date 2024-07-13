@@ -10,7 +10,7 @@
 
     <ImageView
         android:id="@+id/ivBackIconVerifyEmail"
-
+        android:contentDescription="@string/back_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
@@ -28,7 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="110dp"
-        android:text="Check your email!"
+        android:text="@string/check_your_email"
         android:textColor="#FF2E3E5C"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -44,7 +44,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="109dp"
         android:textColor="#FF2E3E5C"
-        android:text="We've sent the code to your email"
+        android:text="@string/we_ve_sent_the_code_to_your_email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvCheckYourEmail" />
@@ -80,6 +80,8 @@
                     android:textSize="20sp"
                     android:textStyle="bold"
                     android:gravity="center"
+                    android:autofillHints="OTP"
+
 
                     />
 
@@ -104,7 +106,7 @@
                     android:textSize="20sp"
                     android:textStyle="bold"
                     android:gravity="center"
-
+                    android:autofillHints="OTP"
 
                     />
 
@@ -130,6 +132,8 @@
                     android:textSize="20sp"
                     android:textStyle="bold"
                     android:gravity="center"
+                    android:autofillHints="OTP"
+
 
                     />
 
@@ -143,8 +147,10 @@
                 app:cardCornerRadius="10dp"
                 app:cardElevation="5dp"
 
+
                 >
                 <EditText
+
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:inputType="numberDecimal"
@@ -154,6 +160,7 @@
                     android:layout_gravity="center"
                     android:maxLength="1"
                     android:gravity="center"
+                    android:autofillHints="OTP"
 
 
                     />
@@ -176,12 +183,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Code expires in: "
+            android:text="@string/code_expires_in"
             />
-        <TextClock
+        <TextView
+            android:id="@+id/tvTimer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="03:12"
+            android:text="@string/_01_30"
             />
 
 
@@ -193,7 +201,7 @@
         android:layout_height="60dp"
         android:layout_marginTop="160dp"
         android:backgroundTint="#1FCC79"
-        android:text="Verify"
+        android:text="@string/verify"
         android:textColor="#FFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
@@ -207,7 +215,7 @@
         android:layout_marginTop="20dp"
         android:backgroundTint="#FFBFBEBE"
         android:outlineProvider="bounds"
-        android:text="Send again"
+        android:text="@string/send_again"
         android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"

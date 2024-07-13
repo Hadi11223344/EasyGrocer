@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1011953891479",
+    "project_id": "easygrocer-977ff",
+    "storage_bucket": "easygrocer-977ff.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1011953891479:android:de8db0b689bcd92b2e11d2",
+        "android_client_info": {
+          "package_name": "com.example.easygrocer"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8DK_Hpk4Pvy5Xx4gylik_V-AD8-3yKkU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

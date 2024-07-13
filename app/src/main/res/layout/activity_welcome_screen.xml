@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="110dp"
-        android:text="Welcome!"
+        android:text="@string/welcome"
         android:textColor="#FF2E3E5C"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -29,13 +29,13 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="109dp"
         android:textColor="#FF2E3E5C"
-        android:text="Please enter your account here"
+        android:text="@string/please_enter_your_account_here"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView2"
+        android:id="@+id/cvEmailWelcomeScreen"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
@@ -51,6 +51,7 @@
 
         <ImageView
             android:id="@+id/ivEmail"
+            android:contentDescription="@string/email_icon"
             android:layout_width="25dp"
             android:layout_height="25dp"
             app:srcCompat="@drawable/ic_email"
@@ -66,15 +67,15 @@
             style="@style/Widget.Material3.TextInputEditText.FilledBox"
             android:padding="2dp"
             android:textColor="#FF2E3E5C"
-            android:layout_marginLeft="25dp"
-            android:hint="yourmail@mail.com"
+            android:layout_marginStart="25dp"
+            android:hint="@string/yourmail_mail_com"
             android:inputType="textEmailAddress"
             android:autofillHints="emailAddress" />
 
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
+        android:id="@+id/cvPasswordWelcomeScreen"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
@@ -85,10 +86,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView2">
+        app:layout_constraintTop_toBottomOf="@+id/cvEmailWelcomeScreen">
 
         <ImageView
             android:id="@+id/ivlock"
+            android:contentDescription="@string/password_icon"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_gravity="center_vertical"
@@ -100,18 +102,20 @@
         <EditText
             android:id="@+id/etPassword"
             style="@style/Widget.Material3.TextInputEditText.FilledBox"
+            android:autofillHints="password"
             android:padding="2dp"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginLeft="25dp"
             android:layout_marginRight="25dp"
             android:ems="10"
-            android:hint="your password"
-            android:inputType="text|textPassword"
+            android:hint="@string/your_password"
+            android:inputType="textPassword"
             android:textColor="#FF2E3E5C" />
 
         <ImageView
             android:id="@+id/ivLockEye"
+            android:contentDescription="@string/password_eye"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_gravity="center_vertical"
@@ -126,21 +130,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Forgot password?"
+        android:text="@string/forgot_password"
         android:textColor="#2E3E5C"
+        android:textStyle="bold"
+        android:gravity="center_horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.812"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+        app:layout_constraintTop_toBottomOf="@+id/cvPasswordWelcomeScreen"
+        app:layout_constraintBottom_toTopOf="@+id/btnLoginWelcomeScreen"
+        />
 
 
     <Button
-        android:id="@+id/btnLogin"
+        android:id="@+id/btnLoginWelcomeScreen"
         android:layout_width="250dp"
         android:layout_height="60dp"
         android:layout_marginTop="20dp"
         android:backgroundTint="#1FCC79"
-        android:text="Login"
+        android:text="@string/login"
         android:textColor="#FFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
@@ -153,19 +161,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Or continue with"
+        android:text="@string/or_continue_with"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
+        app:layout_constraintTop_toBottomOf="@+id/btnLoginWelcomeScreen" />
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView3"
+        android:id="@+id/cvGoogleWelcomeScreen"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:orientation="horizontal"
         app:cardCornerRadius="25dp"
+        android:layout_marginBottom="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvContinueWith">
@@ -177,13 +186,14 @@
             android:layout_height="60dp"
             android:layout_gravity="center"
             android:backgroundTint="#1FCC79"
-            android:text="Google"
+            android:text="@string/google"
             android:textColor="#FFFF" />
 
         <ImageView
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_gravity="center_vertical"
+            android:contentDescription="@string/google_logo"
             android:layout_marginStart="75dp"
             android:src="@drawable/google_logo" />
 
@@ -196,7 +206,7 @@
         android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView3"
+        app:layout_constraintTop_toBottomOf="@+id/cvGoogleWelcomeScreen"
         >
 
         <TextView
@@ -204,15 +214,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="Don't have any account?"
+            android:text="@string/don_t_have_any_account"
  />
 
         <TextView
-            android:id="@+id/tvSignUp"
+            android:id="@+id/tvSignUpWelcomeScreen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text=" Sign Up"
+            android:text="@string/sign_up"
             android:textStyle="bold"
             android:textColor="#FF1FCC79"
             android:gravity="center"

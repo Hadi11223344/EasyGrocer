@@ -57,7 +57,7 @@
         android:layout_height="50dp"
         android:backgroundTint="#1FCC79"
         android:text="Let's Start"
-        android:textColor="@color/black"
+        android:textColor="#FFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
