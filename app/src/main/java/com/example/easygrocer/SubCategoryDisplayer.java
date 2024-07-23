@@ -44,13 +44,13 @@ public class SubCategoryDisplayer extends AppCompatActivity {
         });
 
         init();
-        FirebaseRecyclerOptions<Product> options =
-                new FirebaseRecyclerOptions.Builder<Product>().setQuery(reference
-                        .child("products"),Product.class).build();
+//        FirebaseRecyclerOptions<Product> options =
+//                new FirebaseRecyclerOptions.Builder<Product>().setQuery(reference
+//                        .child("products"),Product.class).build();
 
         Intent i = getIntent();
-        String category = i.getStringExtra("subCategory");
-        tvSubCat.setText(category);
+        String subcategory = i.getStringExtra("subCategory");
+        tvSubCat.setText(subcategory);
 
         FirebaseDatabase.getInstance().getReference().child("products").addValueEventListener(new ValueEventListener() {
             @Override
@@ -62,7 +62,7 @@ public class SubCategoryDisplayer extends AppCompatActivity {
                     for(DataSnapshot ds : snapshot.getChildren()){
                         Product product = ds.getValue(Product.class);
                         assert product != null;
-                        if(product.getSubCategory().equals(category) ){
+                        if(product.getSubCategory().equals(subcategory) ){
                             productsList.add(product);
                         }
 

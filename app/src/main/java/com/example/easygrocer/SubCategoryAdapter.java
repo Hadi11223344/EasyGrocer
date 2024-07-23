@@ -46,20 +46,18 @@ public class SubCategoryAdapter extends RecyclerView.Adapter< SubCategoryAdapter
         holder.tv_ProductName.setText(model.getName());
         holder.tv_ProductPrice.setText(String.valueOf( model.getPrice()));
 
-//        // Get the image URL
-//        String imageUrl = model.getImageUrl();
-//
-//        // Check if the imageUrl is not null or empty
-//        if (imageUrl != null && !imageUrl.isEmpty()) {
-//            // Use Glide to load the image from URL
-//            Glide.with(context)
-//                    .load(imageUrl)
-//                    .apply(new RequestOptions().placeholder(R.drawable.placeholder)) // placeholder image
-//                    .into(holder.iv_image);
-//        } else {
-//            // Set a placeholder image if imageUrl is null or empty
-//            holder.iv_image.setImageResource(R.drawable.placeholder);
-//        }
+
+        // Check if the imageUrl is not null or empty
+        if (model.getImageUrl() != null && !model.getImageUrl().isEmpty()) {
+            // Use Glide to load the image from URL
+            Glide.with(context)
+                    .load(model.getImageUrl())
+                    .apply(new RequestOptions().placeholder(R.drawable.placeholder)) // placeholder image
+                    .into(holder.iv_image);
+        } else {
+            // Set a placeholder image if imageUrl is null or empty
+            holder.iv_image.setImageResource(R.drawable.placeholder);
+        }
     }
 
     @Override
@@ -80,7 +78,7 @@ public class SubCategoryAdapter extends RecyclerView.Adapter< SubCategoryAdapter
             tv_ProductPrice = itemView.findViewById(R.id.tvSingleItemPrice);
             tv_totalPrice  = itemView.findViewById(R.id.tvTotalPrice);
             tv_Quantity     = itemView.findViewById(R.id.tvQuantity);
-
+            iv_image = itemView.findViewById(R.id.ivSelectedItem);
 
 
 

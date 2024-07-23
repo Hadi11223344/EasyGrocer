@@ -1,176 +1,193 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    >
-
-    <androidx.cardview.widget.CardView
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:cardCornerRadius="5dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="150dp"
         android:elevation="5dp"
         android:backgroundTint="@color/white"
         >
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="5dp"
+    android:id="@+id/clSelectedItem"
+    android:gravity="center_vertical"
+    >
+
+
+        <ImageView
+            android:id="@+id/ivSelectedItem"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_shop"
+            android:layout_margin="5dp"
+            android:layout_gravity="center_vertical"
+            app:layout_constraintStart_toStartOf="@id/clSelectedItem"
+            app:layout_constraintTop_toTopOf="@id/clSelectedItem"
+            app:layout_constraintBottom_toBottomOf="@id/clSelectedItem"
+            />
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:id="@+id/llProductDescription"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="5dp"
-            android:id="@+id/llSelectedItem"
+            android:orientation="vertical"
+            android:layout_gravity="center_vertical"
+            app:layout_constraintStart_toEndOf="@id/ivSelectedItem"
+            app:layout_constraintTop_toTopOf="@id/clSelectedItem"
+            app:layout_constraintBottom_toBottomOf="@id/clSelectedItem"
+            >
+            <TextView
+                android:id="@+id/tvSelectedItemName"
+                android:layout_width="148dp"
+                android:layout_height="wrap_content"
+                android:text="Dummy Product"
+                android:gravity="start"
+                android:layout_margin="1dp"
+                />
+            <TextView
+                android:id="@+id/tvSingleItemPrice"
+                android:layout_marginTop="50dp"
+                android:layout_marginStart="1dp"
+                android:layout_width="148dp"
+                android:layout_height="wrap_content"
+                android:text="Single item Price"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="5dp"
+                android:gravity="start"
+
+
+                />
+
+
+            <TextView
+                android:id="@+id/tvTotalPrice"
+                android:layout_marginTop="10dp"
+                android:layout_width="148dp"
+                android:layout_height="wrap_content"
+                android:text="Total Price"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="1dp"
+                android:visibility="invisible"
+                android:gravity="start"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="@id/clSelectedItem"
+            app:layout_constraintBottom_toBottomOf="@id/clSelectedItem"
+            app:layout_constraintEnd_toEndOf="@id/clSelectedItem"
 
             >
-
-
-                <ImageView
-                    android:id="@+id/ivSelectedItem"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/ic_shop"
-                    android:layout_margin="5dp"
-                    android:layout_gravity="center_vertical"
-                    />
-            <LinearLayout
+            <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_gravity="center_vertical"
+                android:layout_gravity="end"
+                app:cardCornerRadius="20dp"
+                android:backgroundTint="@color/white"
+                android:elevation="5dp"
+                android:layout_margin="2dp"
+
                 >
-                <TextView
-                    android:id="@+id/tvSelectedItemName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Dummy Product"
-                    android:gravity="center_horizontal"
-                    android:layout_margin="5dp"
-                    />
-                <TextView
-                    android:id="@+id/tvSingleItemPrice"
-                    android:layout_marginTop="50dp"
-                    android:layout_marginStart="5dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Single item Price"
-                    android:layout_gravity="bottom"
-                    android:layout_marginBottom="5dp"
-
+                <ImageButton
+                    android:id="@+id/ibAddToCart"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_addcart"
+                    android:backgroundTint="@color/white"
 
                     />
 
-
-                <TextView
-                    android:id="@+id/tvTotalPrice"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginStart="5dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Total Price"
-                    android:layout_gravity="bottom"
-                    android:layout_marginBottom="5dp"
-                    android:visibility="invisible"
-
-                    />
-
-            </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginStart="50dp"
+                android:orientation="horizontal"
+                android:layout_gravity="bottom"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginBottom="2dp"
+
+
                 >
                 <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="end"
                     app:cardCornerRadius="20dp"
-                    android:backgroundTint="@color/light_grey"
+                    android:backgroundTint="@color/white"
+                    android:elevation="5dp"
+                    android:layout_margin="2dp"
+
                     >
-                    <ImageButton
-                        android:id="@+id/ibAddToCart"
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/btnMinus"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:src="@drawable/ic_addcart"
-                        android:backgroundTint="@color/light_grey"
+                        android:src="@drawable/ic_minus"
+                        android:backgroundTint="@color/white"
+                        android:layout_gravity="center"
 
                         />
-
                 </androidx.cardview.widget.CardView>
 
-                <LinearLayout
+                <TextView
+                    android:id="@+id/tvQuantity"
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="1"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:layout_gravity="center"
+                    />
+
+                <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_gravity="bottom"
-                    android:layout_marginStart="2dp"
-                    android:layout_marginTop="40dp"
+                    app:cardCornerRadius="20dp"
+                    android:backgroundTint="@color/white"
+                    android:elevation="5dp"
+                    android:layout_margin="2dp"
+
 
                     >
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        app:cardCornerRadius="20dp"
-                        android:backgroundTint="@color/light_grey"
-                        >
-                        <androidx.appcompat.widget.AppCompatImageButton
-                            android:id="@+id/btnMinus"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_minus"
-                            android:backgroundTint="@color/light_grey"
-                            android:layout_gravity="center"
-
-                            />
-                    </androidx.cardview.widget.CardView>
-
-                    <TextView
-                        android:id="@+id/tvQuantity"
-                        android:layout_width="20dp"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
-                        android:text="1"
-                        android:textSize="18sp"
-                        android:gravity="center"
-                        android:textStyle="bold"
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/btnPlus"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/ic_plus"
+                        android:backgroundTint="@color/white"
                         android:layout_gravity="center"
+
                         />
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        app:cardCornerRadius="20dp"
-                        android:backgroundTint="@color/light_grey"
-                        >
-                        <androidx.appcompat.widget.AppCompatImageButton
-                            android:id="@+id/btnPlus"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_plus"
-                            android:backgroundTint="@color/light_grey"
-                            android:layout_gravity="center"
-
-                            />
-                    </androidx.cardview.widget.CardView>
-
-
-                </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
 
             </LinearLayout>
 
 
-
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:background="@color/light_grey"
-
-            />
 
 
 
-</LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/light_grey"
+
+        />
+            </androidx.cardview.widget.CardView>
+

@@ -23,6 +23,7 @@ import com.codebyashish.autoimageslider.Models.ImageSlidesModel;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.FirebaseApp;
+import com.google.firebase.storage.FirebaseStorage;
 
 import java.util.ArrayList;
 

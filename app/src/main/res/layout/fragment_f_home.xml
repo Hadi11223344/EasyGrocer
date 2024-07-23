@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView   xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".FHome"
     android:layout_marginStart="10dp"
     android:layout_marginEnd="10dp"
-    android:layout_marginBottom="?attr/actionBarSize"
-    >
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+    android:layout_marginBottom="90dp"
+    android:layout_marginTop="45dp"
         >
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -62,14 +58,15 @@
 
             <androidx.cardview.widget.CardView
                 app:cardCornerRadius="15dp"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/cvSearchBar"
                 android:id="@+id/cvImageSlider"
-
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
 
                 >
 
@@ -83,6 +80,7 @@
                     app:ais_placeholder="@drawable/placeholder_default_loading"
                     app:ais_time_interval="5000"
                     app:ais_title_background="@drawable/text_background"
+
                     />
 
             </androidx.cardview.widget.CardView>
@@ -94,12 +92,11 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/cvImageSlider"
-            android:layout_marginBottom="?attr/actionBarSize"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             android:id="@+id/rvParent"
+            android:layout_marginBottom="90dp"
             >
 
         </androidx.recyclerview.widget.RecyclerView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>

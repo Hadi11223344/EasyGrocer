@@ -27,6 +27,7 @@ import androidx.fragment.app.Fragment;
 
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.database.DatabaseReference;
@@ -57,6 +58,7 @@ public class FStore extends Fragment {
     private Button btnImageUpload, btnSubmit;
 
     private DatabaseReference databaseReference;
+    StorageReference storageRef;
     private Bitmap selectedImageBitmap;
     private Map<String, ArrayList<String>> subcategoriesMap;
     List<String> categories;
@@ -111,7 +113,7 @@ public class FStore extends Fragment {
         fruitsAndVegetablesSubcategories.add("Exotic Herbs");
 
         ArrayList<String> dairySubcategories = new ArrayList<>();
-        dairySubcategories.add("Milk and Cheese");
+        dairySubcategories.add("Milk & Cheese");
         dairySubcategories.add("Cheese");
         dairySubcategories.add("Powdered Milk");
         dairySubcategories.add("Flavoured Milk");
@@ -199,7 +201,7 @@ public class FStore extends Fragment {
 
         double productPrice = Double.parseDouble(productPriceStr);
 
-        StorageReference storageRef = FirebaseStorage.getInstance().getReference();
+        storageRef = FirebaseStorage.getInstance().getReference();
         StorageReference imageRef;
         String fileName;
         if (imageUri != null) {
@@ -215,50 +217,68 @@ public class FStore extends Fragment {
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
             bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
             byte[] imageData = baos.toByteArray();
-            UploadTask uploadTask = storageRef.putBytes(imageData);
+            imageRef.putBytes(imageData).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    imageRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                        @Override
+                        public void onSuccess(Uri uri) {
+                            String imageUrl = uri.toString();
+                            // Create a Product object and save to Firebase Realtime Database
+                            Product product = new Product(category, productName, productPrice, imageUrl, subcategory);
+                            String productId = databaseReference.push().getKey();
+                            databaseReference.child(productId).setValue(product)
+                                    .addOnCompleteListener(dbTask -> {
+                                        if (dbTask.isSuccessful()) {
+                                            Toast.makeText(requireContext(), "Product added successfully", Toast.LENGTH_SHORT).show();
+                                            clearFields();
+                                        } else {
+                                            Toast.makeText(requireContext(), "Failed to add product", Toast.LENGTH_SHORT).show();
+                                        }
+                                    })
+                                    .addOnFailureListener(e -> {
+                                        // Handle failure to save product data
+                                        Log.e("Firebase", "Failed to save product to database: " + e.getMessage());
+                                        Toast.makeText(requireContext(), "Failed to add product: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                                    });
 
-
-        Task<Uri> urlTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
-            @Override
-            public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
-                if (!task.isSuccessful()) {
-                    throw task.getException();
+                        }
+                    });
                 }
+            });
 
-                // Continue with the task to get the download URL
-                return storageRef.getDownloadUrl();
-            }
-        }).addOnCompleteListener(new OnCompleteListener<Uri>() {
-            @Override
-            public void onComplete(@NonNull Task<Uri> task) {
-                if (task.isSuccessful()) {
-                    Uri downloadUri = task.getResult();
 
-                } else {
-                    // handle else part
-                }
-            }
-        });
 
-        String imageUrl = urlTask.toString();
-        // Create a Product object and save to Firebase Realtime Database
-        Product product = new Product(category, productName, productPrice, imageUrl, subcategory);
-        String productId = databaseReference.push().getKey();
 
-        databaseReference.child(productId).setValue(product)
-                .addOnCompleteListener(dbTask -> {
-                    if (dbTask.isSuccessful()) {
-                        Toast.makeText(requireContext(), "Product added successfully", Toast.LENGTH_SHORT).show();
-                        clearFields();
-                    } else {
-                        Toast.makeText(requireContext(), "Failed to add product", Toast.LENGTH_SHORT).show();
-                    }
-                })
-                .addOnFailureListener(e -> {
-                    // Handle failure to save product data
-                    Log.e("Firebase", "Failed to save product to database: " + e.getMessage());
-                    Toast.makeText(requireContext(), "Failed to add product: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                });
+
+//        Task<Uri> urlTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
+//            @Override
+//            public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
+//                if (!task.isSuccessful()) {
+//                    throw task.getException();
+//                }
+//
+//                // Continue with the task to get the download URL
+//                return storageRef.getDownloadUrl();
+//            }
+//        }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+//            @Override
+//            public void onComplete(@NonNull Task<Uri> task) {
+//                if (task.isSuccessful()) {
+//                    Uri downloadUri = task.getResult();
+//                    String imageUrl = downloadUri.toString();
+//
+//
+//                } else {
+//                    // handle else part
+//                }
+//            }
+//        });
+
+
+
+
+
 
 
     }
